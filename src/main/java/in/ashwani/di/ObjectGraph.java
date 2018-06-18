@@ -5,16 +5,15 @@ package in.ashwani.di;
  */
 public class ObjectGraph {
 
-    private static ObjectGraph instance;
     private Linker linker;
 
     public static ObjectGraph build() {
-        instance = new ObjectGraph();
+        ObjectGraph instance = new ObjectGraph();
         instance.linker = new Linker();
         return instance;
     }
 
     public <T> T get(Class<T> key) {
-        return linker.get(key).get(linker);
+        return linker.resolve(key).get(linker);
     }
 }

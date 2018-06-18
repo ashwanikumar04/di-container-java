@@ -15,7 +15,7 @@ public class Linker {
         registered.put(key, factory);
     }
 
-    public <T> Factory<T> get(Class<T> key) {
+    public <T> Factory<T> resolve(Class<T> key) {
         return (Factory<T>) registered.get(key);
     }
 }
