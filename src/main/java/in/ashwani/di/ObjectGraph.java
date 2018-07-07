@@ -13,6 +13,10 @@ public class ObjectGraph {
         return instance;
     }
 
+    public Linker getLinker() {
+        return linker;
+    }
+
     public <T> T get(Class<T> key) {
         return linker.resolve(key).get(linker);
     }

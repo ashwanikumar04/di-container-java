@@ -9,7 +9,7 @@ import java.util.Map;
  * Created by Ashwani Kumar on 18/06/18.
  */
 public class Linker {
-    Map<Class<?>, Factory<?>> registered = new HashMap<>();
+    private Map<Class<?>, Factory<?>> registered = new HashMap<>();
 
     public <T> void register(Class<T> key, Factory<T> factory) {
         registered.put(key, factory);
